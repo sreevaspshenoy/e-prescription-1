@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "name": "E1",
+    "role": "Anti-AI Designer",
+    "principles": [
+      "Fusion over Imitation",
+      "Emotion First",
+      "Content is King",
+      "Zoom In",
+      "Negative Space",
+      "Contrast"
+    ]
+  },
+  "theme": {
+    "mode": "light",
+    "strategy": "Medical Cleanliness & Trust",
+    "background": "bg-slate-50",
+    "surface": "bg-white"
+  },
+  "typography": {
+    "headings": {
+      "family": "Manrope",
+      "weights": ["600", "700", "800"],
+      "usage": "Page titles, Section headers, Modal titles",
+      "letterSpacing": "tracking-tight"
+    },
+    "body": {
+      "family": "Inter",
+      "weights": ["400", "500"],
+      "usage": "Form labels, Input text, Table data",
+      "letterSpacing": "tracking-normal"
+    },
+    "print": {
+      "family": "Crimson Text",
+      "weights": ["400", "600"],
+      "usage": "PDF Generation, Prescription Letterhead content"
+    },
+    "scale": {
+      "h1": "text-4xl md:text-5xl font-bold text-slate-900",
+      "h2": "text-2xl md:text-3xl font-semibold text-slate-800",
+      "h3": "text-xl font-semibold text-teal-900",
+      "body": "text-sm md:text-base text-slate-600",
+      "label": "text-xs font-medium uppercase tracking-wider text-slate-500"
+    }
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#6B9A9A",
+      "foreground": "#FFFFFF",
+      "50": "#F0F7F7",
+      "100": "#E0F2F1",
+      "200": "#B2DFDB",
+      "300": "#80CBC4",
+      "400": "#4DB6AC",
+      "500": "#6B9A9A",
+      "600": "#00897B",
+      "700": "#00796B",
+      "800": "#00695C",
+      "900": "#004D40"
+    },
+    "secondary": {
+      "DEFAULT": "#F1F5F9",
+      "foreground": "#0F172A"
+    },
+    "accent": {
+      "DEFAULT": "#FF7043",
+      "foreground": "#FFFFFF",
+      "description": "Use sparingly for urgent alerts or 'Remove' actions"
+    },
+    "neutral": {
+      "surface": "#FFFFFF",
+      "background": "#F8FAFC",
+      "border": "#E2E8F0",
+      "text-primary": "#0F172A",
+      "text-secondary": "#64748B"
+    }
+  },
+  "visual_enhancers": {
+    "shadows": {
+      "card": "shadow-[0_2px_8px_rgba(0,0,0,0.04)]",
+      "floating": "shadow-[0_8px_30px_rgb(0,0,0,0.12)]",
+      "inner": "shadow-inner"
+    },
+    "borders": {
+      "default": "border border-slate-200",
+      "focus": "ring-2 ring-teal-500/20 border-teal-500",
+      "subtle": "border-b border-slate-100"
+    },
+    "radius": {
+      "default": "rounded-lg",
+      "button": "rounded-md",
+      "card": "rounded-xl"
+    },
+    "glassmorphism": {
+      "header": "bg-white/80 backdrop-blur-md border-b border-slate-200/50"
+    }
+  },
+  "layout": {
+    "grid_system": {
+      "dashboard": "grid grid-cols-1 md:grid-cols-12 gap-6",
+      "form_dense": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4",
+      "card_grid": "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    },
+    "spacing": {
+      "section": "py-8 md:py-12",
+      "container": "px-4 md:px-8 max-w-7xl mx-auto",
+      "element": "space-y-4"
+    },
+    "containers": {
+      "main": "min-h-screen bg-slate-50 font-sans",
+      "card": "bg-white rounded-xl border border-slate-200 p-6 shadow-sm",
+      "sidebar": "hidden md:flex flex-col w-64 bg-white border-r border-slate-200 h-screen sticky top-0"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#6B9A9A] hover:bg-[#5A8888] text-white shadow-sm transition-all active:scale-95",
+      "secondary": "bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:text-slate-900",
+      "ghost": "hover:bg-slate-100 text-slate-600 hover:text-slate-900",
+      "destructive": "bg-red-50 text-red-600 hover:bg-red-100 border border-red-100"
+    },
+    "inputs": {
+      "default": "h-10 bg-white border-slate-200 focus:border-[#6B9A9A] focus:ring-[#6B9A9A]/20 transition-all",
+      "filled": "bg-slate-50 border-transparent focus:bg-white focus:border-[#6B9A9A]"
+    },
+    "cards": {
+      "interactive": "group hover:border-[#6B9A9A]/50 hover:shadow-md transition-all duration-300 cursor-pointer"
+    }
+  },
+  "motion": {
+    "transitions": "transition-all duration-200 ease-out",
+    "hover": "hover:-translate-y-0.5",
+    "entrance": {
+      "fade_in": "animate-in fade-in duration-500",
+      "slide_up": "animate-in slide-in-from-bottom-4 duration-500"
+    }
+  },
+  "accessibility": {
+    "contrast": "Ensure text is slate-600 or darker on white backgrounds. Use slate-900 for headings.",
+    "focus": "Visible focus rings on all interactive elements.",
+    "labels": "All inputs must have visible labels or aria-labels."
+  },
+  "media": {
+    "image_urls": {
+      "logo": "https://customer-assets.emergentagent.com/job_f56e3599-a7f9-4180-bcce-7e97622082a1/artifacts/v0w3c0wh_Frame%201430106289.png",
+      "header_bg": "https://customer-assets.emergentagent.com/job_f56e3599-a7f9-4180-bcce-7e97622082a1/artifacts/xy0322jq_IMG_6094.heic",
+      "footer_bg": "https://customer-assets.emergentagent.com/job_f56e3599-a7f9-4180-bcce-7e97622082a1/artifacts/09ud2mww_IMG_6097.jpg"
+    },
+    "icons": "Use lucide-react for all UI icons (Stethoscope, Pill, Calendar, User, FileText, Printer, Download, LogOut)."
+  },
+  "libraries": {
+    "3d": "None required. Focus on 2D clarity.",
+    "pdf": "react-to-print or @react-pdf/renderer",
+    "csv": "papaparse (for drug list import)",
+    "date": "date-fns",
+    "charts": "recharts (if needed for history stats)"
+  },
+  "component_paths": {
+    "ui": "/app/frontend/src/components/ui",
+    "features": "/app/frontend/src/components/features",
+    "layout": "/app/frontend/src/components/layout"
+  },
+  "instructions_to_main_agent": [
+    "1. SETUP: Install 'lucide-react', 'papaparse', 'react-to-print', 'date-fns'.",
+    "2. THEME: Configure tailwind.config.js to add the custom colors (primary: #6B9A9A).",
+    "3. FONTS: Import Manrope and Inter from Google Fonts in index.css.",
+    "4. LAYOUT: Create a 'DashboardLayout' with a sidebar and top bar.",
+    "5. PRESCRIPTION PAGE: Use a 'Dense Grid' (Mode B). Patient info at top. Drug list in the middle (dynamic rows).",
+    "6. DRUG INPUT: Implement an autocomplete input that reads from a CSV file (mock the CSV data if file not present).",
+    "7. PDF GENERATION: Create a hidden component 'PrescriptionPrintView' that mimics the letterhead exactly using the provided assets. Use 'react-to-print' to trigger the browser print dialog which allows 'Save as PDF'.",
+    "8. LETTERHEAD: The print view must have the Header image at top, Footer image at bottom, and content in between. Ensure margins are correct for A4.",
+    "9. HISTORY: Simple table view of past prescriptions.",
+    "10. AUTH: Simple mock login page (username/password).",
+    "11. TESTING: Add data-testid to all inputs and buttons (e.g., 'patient-name-input', 'add-drug-btn')."
+  ],
+  "universal_guidelines": [
+    "Do not use gradients for the main background; keep it clean slate-50.",
+    "Use the primary color (#6B9A9A) for primary actions and active states.",
+    "Ensure the 'Print' button is prominent.",
+    "The 'Frequency' dropdown should have the specific options: 0-0-1, 1-0-0, 1-1-1, 1-0-1.",
+    "The 'Duration Unit' dropdown should have: Days, Weeks, Months.",
+    "Auto-calculate end date if possible (optional enhancement).",
+    "Make sure the drug list allows adding multiple rows easily."
+  ]
+}

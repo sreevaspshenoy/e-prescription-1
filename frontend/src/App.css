@@ -1,0 +1,200 @@
+/* RheumaCare E-Prescription Styles */
+
+.prescription-header {
+    background: linear-gradient(to right, #6B9A9A, #5A8888);
+}
+
+.rx-symbol {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6B9A9A;
+}
+
+/* Autocomplete dropdown */
+.autocomplete-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 50;
+}
+
+.autocomplete-item {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.autocomplete-item:hover {
+    background-color: #f0f7f7;
+}
+
+.autocomplete-item.selected {
+    background-color: #6B9A9A;
+    color: white;
+}
+
+/* Drug row styles */
+.drug-row {
+    display: grid;
+    grid-template-columns: 1fr 100px 140px 80px 100px 40px;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .drug-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+}
+
+/* Print view styles */
+.print-view {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 10mm 15mm;
+    background: white;
+    font-family: 'Crimson Text', 'Times New Roman', serif;
+}
+
+.print-header {
+    text-align: center;
+    border-bottom: 2px solid #6B9A9A;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.print-footer {
+    position: absolute;
+    bottom: 15mm;
+    left: 15mm;
+    right: 15mm;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 9pt;
+    color: #666;
+}
+
+/* Button hover effects */
+.btn-primary {
+    background-color: #6B9A9A;
+    color: white;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #5A8888;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(107, 154, 154, 0.3);
+}
+
+.btn-secondary {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+/* Card styles */
+.prescription-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s;
+}
+
+.prescription-card:hover {
+    border-color: rgba(107, 154, 154, 0.5);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Form field focus */
+.form-input:focus {
+    border-color: #6B9A9A;
+    box-shadow: 0 0 0 3px rgba(107, 154, 154, 0.1);
+}
+
+/* Login page */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f7f7 0%, #e8f4f4 100%);
+}
+
+.login-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* History table */
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.history-table th {
+    background: #f8fafc;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #475569;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.history-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.history-table tr:hover td {
+    background: #f8fafc;
+}
+
+/* Logo styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    color: #6B9A9A;
+}
+
+/* Frequency badge */
+.frequency-badge {
+    background: #f0f7f7;
+    color: #6B9A9A;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
