@@ -9,6 +9,7 @@ import logging
 from pathlib import Path
 from pydantic import BaseModel, Field
 from typing import List, Optional
+from contextlib import asynccontextmanager
 import uuid
 from datetime import datetime, timezone
 import jwt
@@ -34,8 +35,19 @@ db = client[os.environ['DB_NAME']]
 JWT_SECRET = os.environ.get('JWT_SECRET', 'rheumacare-secret-key-2024')
 JWT_ALGORITHM = "HS256"
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Startup: init doctors. Shutdown: close Mongo client."""
+    try:
+        await init_doctors()
+    except Exception as e:
+        logger.warning("Startup init_doctors failed (app will still serve): %s", e)
+    yield
+    client.close()
+
+
 # Create the main app
-app = FastAPI()
+app = FastAPI(lifespan=lifespan)
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
@@ -953,11 +965,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-@app.on_event("startup")
-async def startup_event():
-    """Initialize database with default doctors on startup"""
-    await init_doctors()
 
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    client.close()
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
