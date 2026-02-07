@@ -5,8 +5,17 @@ from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import certifi
 import os
+import ssl
 import logging
 from pathlib import Path
+
+# Force TLS 1.2+ for MongoDB Atlas (avoids TLSV1_ALERT_INTERNAL_ERROR on some runtimes)
+_orig_create_default_context = ssl.create_default_context
+def _create_tls12_context():
+    ctx = _orig_create_default_context()
+    ctx.minimum_version = ssl.TLSVersion.TLSv1_2
+    return ctx
+ssl.create_default_context = _create_tls12_context
 from pydantic import BaseModel, Field
 from typing import List, Optional
 from contextlib import asynccontextmanager
