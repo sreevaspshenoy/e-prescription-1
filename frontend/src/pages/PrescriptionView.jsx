@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "sonner";
@@ -77,11 +77,7 @@ const PrescriptionView = () => {
   const [loading, setLoading] = useState(true);
   const [downloading, setDownloading] = useState(false);
 
-  useEffect(() => {
-    fetchPrescription();
-  }, [id]);
-
-  const fetchPrescription = async () => {
+  const fetchPrescription = useCallback(async () => {
     try {
       const response = await axios.get(`${API}/prescriptions/${id}`);
       setPrescription(response.data);
@@ -95,7 +91,11 @@ const PrescriptionView = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id, navigate]);
+
+  useEffect(() => {
+    fetchPrescription();
+  }, [fetchPrescription]);
 
   const handleLogout = () => {
     removeToken();

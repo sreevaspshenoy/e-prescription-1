@@ -103,14 +103,7 @@ const PrescriptionForm = () => {
     fetchDoctors();
   }, []);
 
-  // Fetch prescription data if in edit mode
-  useEffect(() => {
-    if (isEditMode && editId) {
-      fetchPrescriptionForEdit(editId);
-    }
-  }, [isEditMode, editId]);
-
-  const fetchPrescriptionForEdit = async (prescriptionId) => {
+  const fetchPrescriptionForEdit = useCallback(async (prescriptionId) => {
     setInitialLoading(true);
     try {
       const response = await axios.get(`${API}/prescriptions/${prescriptionId}`);
@@ -157,7 +150,14 @@ const PrescriptionForm = () => {
     } finally {
       setInitialLoading(false);
     }
-  };
+  }, [navigate]);
+
+  // Fetch prescription data if in edit mode
+  useEffect(() => {
+    if (isEditMode && editId) {
+      fetchPrescriptionForEdit(editId);
+    }
+  }, [isEditMode, editId, fetchPrescriptionForEdit]);
 
   const fetchDoctors = async () => {
     try {
