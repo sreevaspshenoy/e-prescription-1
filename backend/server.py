@@ -5,6 +5,7 @@ from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import certifi
 import os
+import ssl
 import logging
 from pathlib import Path
 from pydantic import BaseModel, Field
@@ -26,9 +27,17 @@ import urllib.request
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-# MongoDB connection (use certifi CA bundle for Atlas SSL on macOS)
+# MongoDB connection (use certifi CA bundle for Atlas SSL)
+# TLS 1.2 context avoids SSL handshake errors with Atlas on Python 3.13 (TLSV1_ALERT_INTERNAL_ERROR)
 mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url, tlsCAFile=certifi.where())
+_ssl_ctx = ssl.create_default_context()
+_ssl_ctx.minimum_version = ssl.TLSVersion.TLSv1_2
+client = AsyncIOMotorClient(
+    mongo_url,
+    tlsCAFile=certifi.where(),
+    ssl_context=_ssl_ctx,
+    serverSelectionTimeoutMS=30000,
+)
 db = client[os.environ['DB_NAME']]
 
 # JWT Secret
